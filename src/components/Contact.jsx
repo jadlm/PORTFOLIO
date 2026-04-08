@@ -58,10 +58,10 @@ export default function Contact() {
                 J&apos;aimerais avoir de vos nouvelles ! Si vous avez des questions ou des projets, envoyez-moi un message sur WhatsApp, Email ou via mes réseaux sociaux.
             </motion.p>
 
-            <div className="flex flex-col md:flex-row gap-10 max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-10 max-w-4xl mx-auto w-full">
                 <motion.div 
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.9 }}
                     className="flex flex-col gap-6 w-full md:w-1/3"
                 >
@@ -80,10 +80,10 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.form 
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.9 }}
-                    onSubmit={onSubmit} className="flex-1"
+                    onSubmit={onSubmit} className="flex-1 w-full"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                         <input type="text" placeholder="Votre nom" className="flex-1 px-3 py-2 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white dark:bg-darkHover/30" required name="name" />
