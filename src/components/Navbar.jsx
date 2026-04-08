@@ -54,10 +54,10 @@ export default function Navbar() {
                 </a>
 
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/30 dark:bg-transparent">
-                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#top">Home</a></li>
-                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#about">About</a></li>
+                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#top">Accueil</a></li>
+                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#about">À propos</a></li>
                     <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#services">Services</a></li>
-                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#work">Projects</a></li>
+                    <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#work">Projets</a></li>
                     <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#contact">Contact</a></li>
                 </ul>
 
@@ -86,10 +86,10 @@ export default function Navbar() {
                         <img src="./assets/close-white.png" alt="" className="w-5 cursor-pointer hidden dark:block" />
                     </div>
 
-                    <li><a href="#top" onClick={closeMenu}>Home</a></li>
-                    <li><a href="#about" onClick={closeMenu}>About</a></li>
+                    <li><a href="#top" onClick={closeMenu}>Accueil</a></li>
+                    <li><a href="#about" onClick={closeMenu}>À propos</a></li>
                     <li><a href="#services" onClick={closeMenu}>Services</a></li>
-                    <li><a href="#work" onClick={closeMenu}>Projects</a></li>
+                    <li><a href="#work" onClick={closeMenu}>Projets</a></li>
                     <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
                 </ul>
             </nav>

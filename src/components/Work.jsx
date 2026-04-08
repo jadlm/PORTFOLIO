@@ -1,106 +1,124 @@
+import { motion } from 'framer-motion'
 export default function Work() {
     const projects = [
         {
             title: "DxnMar",
-            description: "Full Stack E-commerce platform built with React and Tailwind.",
+            description: "Plateforme E-commerce full stack avec gestion de panier et paiements.",
+            technologies: "React, Tailwind, Node.js",
+            role: "Développeur Lead",
             link: "https://dxnmar.vercel.app",
             type: "Web App",
             bgImage: "./assets/work-1.png"
         },
         {
-            title: "Smart Life Maroc",
-            description: "Modern IoT and Smart Home solutions interface.",
-            link: "https://click-shop-ma.vercel.app",
-            type: "E-commerce",
-            bgImage: "./assets/work-2.png"
-        },
-        {
             title: "ICAN 2025",
-            description: "Event Management and Registration platform.",
+            description: "Plateforme de gestion d'événements et d'inscription en ligne.",
+            technologies: "Next.js, Firebase",
+            role: "Développeur Front-End",
             link: "https://can2025-zeta.vercel.app",
             type: "Event App",
-            bgImage: "./assets/work-3.png"
-        },
-        {
-            title: "Verrell Portfolio",
-            description: "Premium photography and design portfolio.",
-            link: "https://verrell.vercel.app",
-            type: "Portfolio",
-            bgImage: "./assets/work-4.png"
+            bgImage: "./assets/work-2.png"
         },
         {
             title: "Allo Clean",
-            description: "Professional cleaning service booking platform.",
+            description: "Service de réservation en ligne pour prestations de nettoyage.",
+            technologies: "React, Express, MongoDB",
+            role: "Full Stack Developer",
             link: "https://allo-clean.vercel.app",
             type: "Service Platform",
-            bgImage: "./assets/work-1.png"
-        },
-        {
-            title: "BeldiChic",
-            description: "Traditional Moroccan fashion e-commerce site.",
-            link: "https://beldichic.vercel.app",
-            type: "E-commerce",
-            bgImage: "./assets/work-2.png"
-        },
-        {
-            title: "Jad Cosmetics",
-            description: "Beauty and cosmetics products store.",
-            link: "https://jadcosmetics.vercel.app",
-            type: "Shop",
             bgImage: "./assets/work-3.png"
         },
         {
-            title: "Jad Phone",
-            description: "Store for smartphones and accessories.",
-            link: "https://jadphone.vercel.app",
-            type: "Shop",
+            title: "BeldiChic",
+            description: "Boutique en ligne spécialisée dans la mode traditionnelle marocaine.",
+            technologies: "React, Tailwind CSS",
+            role: "Développeur UI/UX",
+            link: "https://beldichic.vercel.app",
+            type: "E-commerce",
             bgImage: "./assets/work-4.png"
         }
     ];
 
     return (
-        <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
-            <h4 className="text-center mb-2 text-lg font-Ovo">My Portfolio</h4>
-            <h2 className="text-center text-5xl font-Ovo">My Latest Projects</h2>
-            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-                I am a Full Stack Developer creating modern, scalable and user-friendly digital solutions, mostly deployed on Vercel.
-            </p>
+        <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            id="work" className="w-full px-[12%] py-10 scroll-mt-20"
+        >
+            <motion.h4 
+                initial={{ y: -20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="text-center mb-2 text-lg font-Ovo"
+            >
+                Mon Portfolio
+            </motion.h4>
 
-            <div className="grid grid-cols-auto gap-5 my-10 dark:text-black">
+            <motion.h2 
+                initial={{ y: -20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="text-center text-5xl font-Ovo"
+            >
+                Mes Projets Récents
+            </motion.h2>
+
+            <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"
+            >
+                Je suis un développeur Full Stack spécialisé dans la création de solutions numériques modernes, évolutives et conviviales.
+            </motion.p>
+
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto gap-5 my-10 dark:text-black"
+            >
                 {projects.map((project, index) => (
-                    <div
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                         key={index}
                         className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative group cursor-pointer"
                         style={{ backgroundImage: `url(${project.bgImage})` }}
                     >
-                        <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                            <div>
-                                <h2 className="font-semibold">{project.title}</h2>
-                                <p className="text-sm text-gray-700">{project.type}</p>
+                        <div className="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 shadow-lg">
+                            <div className="pr-2">
+                                <h2 className="font-semibold text-sm sm:text-base">{project.title}</h2>
+                                <p className="text-[10px] sm:text-xs text-gray-700 font-medium">{project.technologies}</p>
+                                <p className="text-[10px] text-blue-600 font-bold uppercase mt-1">{project.role}</p>
                             </div>
                             <a 
                                 href={project.link} 
                                 target="_blank" 
                                 rel="noreferrer"
-                                className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+                                className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition shrink-0"
                             >
                                 <img src="./assets/send-icon.png" alt="send icon" className="w-5" />
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
-            <a 
+            <motion.a 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.1 }}
                 href="https://vercel.com/lamtaifi19989-gmailcoms-projects" 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
             >
-                Show more (Jad Lamtaifi on Vercel)
+                Voir plus
                 <img src="./assets/right-arrow-bold.png" alt="Right arrow" className="w-4 dark:hidden" />
                 <img src="./assets/right-arrow-bold-dark.png" alt="Right arrow" className="w-4 hidden dark:block" />
-            </a>
-        </div>
+            </motion.a>
+        </motion.div>
     );
 }
