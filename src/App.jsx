@@ -19,10 +19,7 @@ function useIsMobile() {
 
 export default function App() {
     const isMobile = useIsMobile()
-    const initialMode = useMemo(() => (isMobile ? 'classic' : 'three'), [isMobile])
-    const [mode, setMode] = useState(initialMode)
-
-    useEffect(() => setMode(initialMode), [initialMode])
+    const [mode, setMode] = useState('classic')
 
     if (mode === 'three') {
         return (
@@ -32,5 +29,5 @@ export default function App() {
         )
     }
 
-    return <ClassicPortfolio onEnter3D={!isMobile ? () => setMode('three') : undefined} />
+    return <ClassicPortfolio onEnter3D={() => setMode('three')} />
 }

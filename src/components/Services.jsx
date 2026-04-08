@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Services() {
 
@@ -40,22 +41,47 @@ export default function Services() {
   ];
 
   return (
-    <div id="services" className="w-full px-[12%] py-10 scroll-mt-20">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      id="services" className="w-full px-6 sm:px-[12%] py-10 scroll-mt-20"
+    >
 
-      <h4 className="text-center mb-2 text-lg font-Ovo">
-        What I Offer
-      </h4>
+      <motion.h4 
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-center mb-2 text-lg font-Ovo"
+      >
+        Ce que je propose
+      </motion.h4>
 
-      <h2 className="text-center text-5xl font-Ovo">
-        My Services
-      </h2>
+      <motion.h2 
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-center text-5xl font-Ovo"
+      >
+        Mes Services
+      </motion.h2>
 
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        I am a Full Stack Developer creating modern, scalable and user-friendly digital solutions.
-      </p>
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"
+      >
+        Je suis un développeur Full Stack créant des solutions numériques modernes, évolutives et conviviales.
+      </motion.p>
 
       {/* SERVICES GRID */}
-      <div className="grid grid-cols-auto gap-6 my-10">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto gap-6 my-10"
+      >
 
         {services.map((service, index) => (
 
@@ -100,7 +126,7 @@ export default function Services() {
 
         ))}
 
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

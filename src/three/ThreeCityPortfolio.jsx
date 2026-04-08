@@ -481,6 +481,50 @@ export default function ThreeCityPortfolio({ onExit }) {
 
             <MiniMap buildings={buildings} carXZ={carXZ} />
 
+            {/* Mobile Controls */}
+            <div className="fixed bottom-10 right-10 z-[70] flex flex-col gap-2 md:hidden">
+                <div className="flex justify-center">
+                    <button 
+                        onPointerDown={() => keysRef.current.forward = true}
+                        onPointerUp={() => keysRef.current.forward = false}
+                        className="w-14 h-14 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center border border-white/20 active:bg-white/60"
+                    >
+                        ↑
+                    </button>
+                </div>
+                <div className="flex gap-2">
+                    <button 
+                        onPointerDown={() => keysRef.current.left = true}
+                        onPointerUp={() => keysRef.current.left = false}
+                        className="w-14 h-14 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center border border-white/20 active:bg-white/60"
+                    >
+                        ←
+                    </button>
+                    <button 
+                        onPointerDown={() => keysRef.current.back = true}
+                        onPointerUp={() => keysRef.current.back = false}
+                        className="w-14 h-14 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center border border-white/20 active:bg-white/60"
+                    >
+                        ↓
+                    </button>
+                    <button 
+                        onPointerDown={() => keysRef.current.right = true}
+                        onPointerUp={() => keysRef.current.right = false}
+                        className="w-14 h-14 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center border border-white/20 active:bg-white/60"
+                    >
+                        →
+                    </button>
+                </div>
+                <button 
+                    onClick={() => {
+                        if (nearby) enterSection(nearby)
+                    }}
+                    className="mt-2 w-full h-12 rounded-xl bg-blue-500/60 text-white backdrop-blur-md font-bold"
+                >
+                    ENTER (E)
+                </button>
+            </div>
+
             <Canvas
                 shadows
                 camera={{ position: [0, 8, 18], fov: 55, near: 0.1, far: 400 }}
