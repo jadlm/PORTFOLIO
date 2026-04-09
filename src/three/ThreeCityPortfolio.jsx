@@ -182,11 +182,11 @@ function CarRuntime({ carRef, keysRef, velRef, yawRef, scratch, buildings, onNea
         dt = Math.min(dt, maxDt)
 
         // movement params
-        const accel = 18
-        const maxSpeed = 14
-        const turnSpeed = 2.4
-        const drag = 6.5
-        const lateralGrip = 10
+        const accel = 50
+        const maxSpeed = 30
+        const turnSpeed = 3.5
+        const drag = 5
+        const lateralGrip = 14
 
         scratch.forward.set(Math.sin(yawRef.current), 0, Math.cos(yawRef.current)).normalize()
         scratch.right.set(scratch.forward.z, 0, -scratch.forward.x)
